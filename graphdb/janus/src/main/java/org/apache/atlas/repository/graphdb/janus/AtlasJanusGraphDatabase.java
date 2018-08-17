@@ -100,6 +100,7 @@ public class AtlasJanusGraphDatabase implements GraphDatabase<AtlasJanusVertex, 
                     Configuration config;
                     try {
                         config = getConfiguration();
+                        LOG.info("AtlasJanusGraphDatabase: getGraphInstance has wait-time config {}",config.getProperty("storage.lock.wait-time"));
                     } catch (AtlasException e) {
                         throw new RuntimeException(e);
                     }
